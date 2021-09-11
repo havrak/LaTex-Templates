@@ -5,7 +5,7 @@
 \setlength\textwidth{165mm}
 \setlength\oddsidemargin{-2mm}
 \setlength\evensidemargin{-2mm}
-\usepackage[english]{babel}
+\usepackage[czech]{babel}
 \usepackage[a-2u]{pdfx}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -15,13 +15,13 @@
 
 \def\author{Havránek Kryštof 4.E}
 
-\def\name{Name of subject}
+\def\name{Name of paper}
 
 
 \makeatletter
 \def\@makechapterhead#1{
 	{\parindent \z@ \raggedright \normalfont
-		\huge\bfseries \thechapter. #1
+		\huge\bfseries #1
 		\par\nobreak
 		\vskip 20\p@
 }}
@@ -40,7 +40,7 @@
 \fancyhf{}
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0.4pt}
-	\fancyhead[L]{\textbf{\name -- \thechapter. \leftmark}}
+	\fancyhead[L]{\textbf{\name}}
 
 	\fancyfoot[L]{\author}
 	\fancyfoot[C]{}
@@ -51,8 +51,6 @@
 \begin{document}
 \pagestyle{plain}
 
-
-\tableofcontents
 
 \chapter{}
 
