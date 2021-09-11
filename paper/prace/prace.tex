@@ -1,0 +1,155 @@
+\documentclass[a4paper,oneside,12pt]{report}
+\setlength\textwidth{155mm}
+\setlength\textheight{247mm}
+\setlength\topmargin{-10mm}
+\setlength\headheight{0mm}
+\setlength\oddsidemargin{05mm}
+\setlength\evensidemargin{05mm}
+\let\openright=\clearpage
+
+
+%% Vytváříme PDF/A-2u
+\usepackage[a-2u]{pdfx}
+
+%% Přepneme na českou sazbu a fonty Latin Modern
+\usepackage[czech]{babel}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+%% Použité kódování znaků: obvykle latin2, cp1250 nebo utf8:
+\usepackage[utf8]{inputenc}
+
+%%% Další užitečné balíčky (jsou součástí běžnýsrov.stribucí LaTeXu)
+\usepackage{amsmath}        % rozšíření pro sazbu matematiky
+\usepackage{amsfonts}       % matematické fonty
+\usepackage{amsthm}         % sazba vět, definic apod.
+\usepackage{bbding}         % balíček s nejrůznějšími symboly
+			   										% (čtverečky, hvězdičky, tužtičky, nůžtičky, ...)
+\usepackage{bm}             % tučné symboly (příkaz \bm)
+\usepackage{graphicx}       % vkládání obrázků
+\usepackage{fancyhdr}				% možnost slylizovat záhlaví
+\usepackage{fancyvrb}       % vylepšené prostředí pro strojové písmo
+\usepackage{indentfirst}    % zavede odsazení 1. odstavce kapitoly
+\usepackage[nottoc]{tocbibind} % zajistí přidání seznamu literatury,
+\usepackage{icomma}         % inteligetní čárka v matematickém módu
+\usepackage{dcolumn}        % lepší zarovnání sloupců v tabulkách
+\usepackage{booktabs}       % lepší vodorovné linky v tabulkách
+\usepackage{paralist}       % lepší enumerate a itemize
+\usepackage{caption}				%	popisky
+\usepackage{dirtree}				% strom souborů
+\usepackage{listings}				% vkládání kódu
+\usepackage[bottom]{footmisc}  % poznámky pod čarou vespod
+\usepackage{bibentry}
+\usepackage{xurl}						% umožní url zalomit všude
+\nobibliography*
+
+\usepackage{color}
+\usepackage{natbib}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+\renewcommand{\baselinestretch}{1.5}
+%%% Údaje o práci
+
+\def\NazevSkoly{}
+% Název oboru včetně počátečního 'Obor'.
+\def\NazevOboru{}
+
+% Název práce v jazyce práce (přesně podle zadání)
+\def\NazevPrace{}
+
+\def\NazevPraceShort{}
+% Název práce v angličtině
+\def\NazevPraceEN{}
+
+% Název práce v němčině
+\def\NazevPraceDE{}
+
+% Jméno autora
+\def\AutorPrace{}
+
+% Rok odevzdání
+\def\RokOdevzdani{}
+% Měsíc odevzdání
+\def\MesicOdevzdani{}
+
+% Vedoucí práce: Jméno a příjmení s~tituly
+\def\Vedouci{}
+
+% Nepovinné poděkování (vedoucímu práce, konzultantovi, tomu, kdo
+% zapůjčil software, literaturu apod.)
+\def\Podekovani{%
+\textbf{Poděkování}
+}
+
+% Abstrakt (doporučený rozsah cca 80-200 slov; nejedná se o zadání práce)
+\def\Abstrakt{%
+}
+
+\def\AbstraktEN{%
+}
+\def\AbstraktDE{%
+}
+% 3 až 5 klíčových slov (doporučeno), každé uzavřeno ve složených závorkách
+\def\KlicovaSlova{%
+}
+\def\KlicovaSlovaEN{%
+}
+
+\def\KlicovaSlovaDE{%
+}
+
+%% Balíček hyperref, kterým jdou vyrábět klikací odkazy v PDF,
+%% ale hlavně ho používáme k uložení metadat do PDF (včetně obsahu).
+%% Většinu nastavítek přednastaví balíček pdfx.
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+
+%% Definice různých užitečných maker (viz popis uvnitř souboru)
+\include{makra}
+
+%% Titulní strana a různé povinné informační strany
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[C]{}
+\fancyhead[L]{Ročníková práce -- \NazevSkoly}
+\fancyhead[R]{}
+\fancyfoot[L]{Vypracoval: \AutorPrace	(\NazevOboru)}
+\fancyfoot[C]{\NazevPraceShort}
+\fancyfoot[R]{\thepage}
+}
+
+
+
+\begin{document}
+
+\include{titulka}
+
+\tableofcontents
+
+
+\newpage
+
+\include{uvod}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+
+% ugly hack to change page numbering
+\chapter*{}
+\pagenumbering{roman}
+\setcounter{page}{6}
+\include{zaver}
+
+\include{literatura}
+
+\listoffigures
+\openright
+\end{document}
