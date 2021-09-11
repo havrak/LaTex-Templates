@@ -1,0 +1,60 @@
+\documentclass[a4paper,12pt]{report}
+
+\addtolength{\topmargin}{-1.1in}
+\setlength\textheight{265mm}
+\setlength\textwidth{165mm}
+\setlength\oddsidemargin{-2mm}
+\setlength\evensidemargin{-2mm}
+\usepackage[english]{babel}
+\usepackage[a-2u]{pdfx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{lmodern,textcomp}
+\usepackage{fancyhdr}
+
+
+\def\author{Havránek Kryštof 4.E}
+
+\def\name{Name of subject}
+
+
+\makeatletter
+\def\@makechapterhead#1{
+	{\parindent \z@ \raggedright \normalfont
+		\huge\bfseries \thechapter. #1
+		\par\nobreak
+		\vskip 20\p@
+}}
+\def\@makeschapterhead#1{
+	{\parindent \z@ \raggedright \normalfont
+		\huge\bfseries #1
+		\par\nobreak
+		\vskip 20\p@
+}}
+\makeatother
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{#1}{}}
+
+\fancypagestyle{plain}{
+\fancyhf{}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	\fancyhead[L]{\textbf{\name -- \thechapter. \leftmark}}
+
+	\fancyfoot[L]{\author}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{\thepage}
+}
+
+
+\begin{document}
+\pagestyle{plain}
+
+
+\tableofcontents
+
+\chapter{}
+
+
+\end{document}
