@@ -9,14 +9,13 @@
 \usepackage[a-2u]{pdfx}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage[T1]{fontenc}
 \usepackage{lmodern,textcomp}
 \usepackage{fancyhdr}
 
 
+\def\title{}
 \def\author{Havránek Kryštof 4.E}
-
-\def\name{Name of paper}
-
 
 \makeatletter
 \def\@makechapterhead#1{
@@ -40,7 +39,7 @@
 \fancyhf{}
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0.4pt}
-	\fancyhead[L]{\textbf{\name}}
+	\fancyhead[L]{\textbf{\title}}
 
 	\fancyfoot[L]{\author}
 	\fancyfoot[C]{}

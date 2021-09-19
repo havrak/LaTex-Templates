@@ -10,13 +10,12 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{lmodern,textcomp}
+\usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
 
 
+\def\title{}
 \def\author{Havránek Kryštof 4.E}
-
-\def\name{Name of subject}
-
 
 \makeatletter
 \def\@makechapterhead#1{
@@ -36,12 +35,23 @@
 \renewcommand{\chaptermark}[1]{%
 \markboth{#1}{}}
 
-\fancypagestyle{plain}{
-\fancyhf{}
+\fancypagestyle{toc}{
+	\fancyhf{}
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0.4pt}
-	\fancyhead[L]{\textbf{\name -- \thechapter. \leftmark}}
+	\fancyhead[C]{}
+	\fancyhead[L]{\textbf{\title}}
+	\fancyfoot[L]{\author}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{\thepage}
+}
 
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	\fancyhead[C]{}
+	\fancyhead[L]{\textbf{\title -- \thechapter. \leftmark}}
 	\fancyfoot[L]{\author}
 	\fancyfoot[C]{}
 	\fancyfoot[R]{\thepage}
@@ -49,10 +59,15 @@
 
 
 \begin{document}
-\pagestyle{plain}
 
+\addtocontents{toc}{\protect\thispagestyle{toc}}
+\pagestyle{toc}
 
 \tableofcontents
+
+\cleardoublepage
+
+\pagestyle{plain}
 
 \chapter{}
 
