@@ -9,9 +9,13 @@
 \usepackage[a-2u]{pdfx}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{hyperref}
+\hypersetup{pdfborder=0 0 0}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,textcomp}
 \usepackage{fancyhdr}
+\usepackage{minted}
+\usepackage{xurl}
 
 
 \def\title{}
@@ -36,7 +40,7 @@
 \markboth{#1}{}}
 
 \fancypagestyle{plain}{
-\fancyhf{}
+	\fancyhf{}
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0.4pt}
 	\fancyhead[L]{\textbf{\title}}

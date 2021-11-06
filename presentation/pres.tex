@@ -9,9 +9,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
-\usepackage{caption}		% popisky
-\usepackage{bbding}     % balíček s nejrůznějšími symboly
+\usepackage{caption}
+\usepackage{bbding}
+\usepackage{xurl}
 \usepackage{scrextend}
+\usepackage{minted}
 
 \captionsetup{labelformat=empty}
 
@@ -28,14 +30,6 @@
 
 \hypersetup{unicode}
 \hypersetup{breaklinks=true}
-
-\usepackage{color}
-\definecolor{pblue}{rgb}{0.13,0.13,1}
-\definecolor{pgreen}{rgb}{0,0.5,0}
-\definecolor{pred}{rgb}{0.9,0,0}
-\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
-
-
 
 
 \title{}
@@ -58,20 +52,13 @@
 \setcounter{framenumber}{0}
 
 
-\frame{
+\begin{frame}[fragile]
 	\frametitle{Zdroje}
 	\section{Zdroje}
 	\changefontsizes{7pt}
 	\begin{itemize}
 		\item
 	\end{itemize}
-}
-
-% \begin{frame}[noframenumbering, plain]
-% 	\text{\huge Děkuji za pozornost.}
-%
-% 	\vspace{0.5cm}
-% 	Otázky?
-% \end{frame}
+\end{frame}
 
 \end{document}

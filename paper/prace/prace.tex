@@ -13,35 +13,33 @@
 
 %% Přepneme na českou sazbu a fonty Latin Modern
 \usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 
-%% Použité kódování znaků: obvykle latin2, cp1250 nebo utf8:
-\usepackage[utf8]{inputenc}
 
-%%% Další užitečné balíčky (jsou součástí běžnýsrov.stribucí LaTeXu)
-\usepackage{amsmath}        % rozšíření pro sazbu matematiky
-\usepackage{amsfonts}       % matematické fonty
-\usepackage{amsthm}         % sazba vět, definic apod.
-\usepackage{bbding}         % balíček s nejrůznějšími symboly
-			   										% (čtverečky, hvězdičky, tužtičky, nůžtičky, ...)
-\usepackage{bm}             % tučné symboly (příkaz \bm)
-\usepackage{graphicx}       % vkládání obrázků
-\usepackage{fancyhdr}				% možnost slylizovat záhlaví
-\usepackage{fancyvrb}       % vylepšené prostředí pro strojové písmo
-\usepackage{indentfirst}    % zavede odsazení 1. odstavce kapitoly
-\usepackage[nottoc]{tocbibind} % zajistí přidání seznamu literatury,
-\usepackage{icomma}         % inteligetní čárka v matematickém módu
-\usepackage{dcolumn}        % lepší zarovnání sloupců v tabulkách
-\usepackage{booktabs}       % lepší vodorovné linky v tabulkách
-\usepackage{paralist}       % lepší enumerate a itemize
-\usepackage{caption}				%	popisky
-\usepackage{dirtree}				% strom souborů
-\usepackage{listings}				% vkládání kódu
-\usepackage[bottom]{footmisc}  % poznámky pod čarou vespod
-\usepackage{bibentry}
-\usepackage{xurl}						% umožní url zalomit všude
+\usepackage{amsmath}						% rozšíření pro sazbu matematiky
+\usepackage{amsfonts}						% matematické fonty
+\usepackage{amsthm}							% sazba vět, definic apod.
+\usepackage{bbding}							% balíček s nejrůznějšími symboly (čtverečky, hvězdičky, tužtičky, nůžtičky, ...)
+\usepackage{bm}									% tučné symboly (příkaz \bm)
+\usepackage{graphicx}						% vkládání obrázků
+\usepackage{fancyhdr}						% možnost stylizovat záhlaví
+\usepackage{fancyvrb}						% vylepšené prostředí pro strojové písmo
+\usepackage{indentfirst}				% zavede odsazení 1. odstavce kapitoly
+\usepackage[nottoc]{tocbibind} 	% zajistí přidání seznamu literatury,
+\usepackage{icomma}         		% inteligentní čárka v matematickém módu
+\usepackage{dcolumn}        		% lepší zarovnání sloupců v tabulkách
+\usepackage{booktabs}       		% lepší vodorovné linky v tabulkách
+\usepackage{paralist}       		% lepší enumerate a itemize
+\usepackage{caption}						%	popisky
+\usepackage{dirtree}						% strom souborů
+\usepackage{minted} 						% vkládání kódu
+\usepackage[bottom]{footmisc}  	% poznámky pod čarou vespod
+\usepackage{bibentry} 					% citace přes celé heslo, používáno u první citace z jednoho zdroje
+\usepackage{xurl}								% umožní url zalomit všude
+\usepackage{hyperref} 					% odstranění červených okrajů v obsahu
 \nobibliography*
 
 \usepackage{color}
@@ -98,15 +96,14 @@
 }
 \def\KlicovaSlovaEN{%
 }
-
 \def\KlicovaSlovaDE{%
 }
 
 %% Balíček hyperref, kterým jdou vyrábět klikací odkazy v PDF,
 %% ale hlavně ho používáme k uložení metadat do PDF (včetně obsahu).
-%% Většinu nastavítek přednastaví balíček pdfx.
 \hypersetup{unicode}
 \hypersetup{breaklinks=true}
+\hypersetup{pdfborder=0 0 0}
 
 %% Definice různých užitečných maker (viz popis uvnitř souboru)
 \include{makra}
@@ -142,10 +139,10 @@
 
 
 
-% ugly hack to change page numbering
+
 \chapter*{}
 \pagenumbering{roman}
-\setcounter{page}{6}
+\setcounter{page}{6} % text bude pokračovat v číslování římském, kde přestal na začátku souboru
 \include{zaver}
 
 \include{literatura}
