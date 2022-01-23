@@ -14,9 +14,11 @@
 \usepackage{xurl}
 \usepackage{scrextend}
 \usepackage{minted}
+\usepackage{appendixnumberbeamer}
 
 \captionsetup{labelformat=empty}
 
+\beamertemplatenavigationsymbolsempty
 \defbeamertemplate*{title page}{customized}[1][]
 {
 	\usebeamerfont{title}\inserttitle\par
@@ -52,7 +54,8 @@
 \setcounter{framenumber}{0}
 
 
-\begin{frame}[fragile]
+\appendix
+\begin{frame}[plain]
 	\frametitle{Zdroje}
 	\section{Zdroje}
 	\changefontsizes{7pt}
