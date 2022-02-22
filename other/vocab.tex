@@ -1,0 +1,68 @@
+\documentclass[a4paper,12pt]{report}
+
+\addtolength{\topmargin}{-1.1in}
+\setlength\textheight{265mm}
+\setlength\textwidth{165mm}
+\setlength\oddsidemargin{-2mm}
+\setlength\evensidemargin{-2mm}
+\usepackage[czech]{babel}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage[a-2u]{pdfx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{lmodern,textcomp}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+
+
+\def\author{Havránek Kryštof 4.E}
+
+\def\name{AJK}
+
+
+\makeatletter
+\def\@makechapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+      \huge\bfseries  #1
+      \par\nobreak
+      \vskip 20\p@
+    }}
+\def\@makeschapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+      \huge\bfseries #1
+      \par\nobreak
+      \vskip 20\p@
+    }}
+\makeatother
+
+\renewcommand{\chaptermark}[1]{%
+  \markboth{#1}{}}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+	\fancyhead[L]{\textbf{\name \hspace{1mm}-- \leftmark}}
+
+  \fancyfoot[L]{\author}
+  \fancyfoot[C]{}
+  \fancyfoot[R]{\thepage}
+}
+
+\begin{document}
+\pagestyle{plain}
+
+
+\chapter{}
+
+\begin{center}
+  \begin{longtable}{| m{8cm} | m{8cm} | }
+		\hline
+		\hline
+	\end{longtable}
+\end{center}
+
+
+
+\end{document}
