@@ -13,12 +13,34 @@
 \hypersetup{pdfborder=0 0 0}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,textcomp}
+\usepackage{tabularx}
+\usepackage{pgfplots}
+\usepackage{xcolor,colortbl}
+\usepackage{multicol}
+\usepackage{pgfplots}
+\usepackage{textpos}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{amssymb}
 \usepackage{fancyhdr}
+\usepackage{enumitem}
 \usepackage{xurl}
 
 
 \def\title{}
-\def\author{Havránek Kryštof 4.E}
+\def\author{Havránek Kryštof ČVUT-FEL}
+
+\newcommand {\R}{\mathbb{R}}
+\newcommand {\N}{\mathbb{N}}
+\newcommand {\Q}{\mathbb{Q}}
+\newcommand {\C}{\mathbb{C}}
+\newcommand {\F}{\mathbb{F}}
+\newcommand {\Z}{\mathbb{Z}}
+\newcommand {\lcom}{\left\langle\left\langle}
+\newcommand {\rcom}{\right\rangle\right\rangle}
+
+\newcommand\eqlh{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny L'H}}}{=}}}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
 
 \makeatletter
 \def\@makechapterhead#1{

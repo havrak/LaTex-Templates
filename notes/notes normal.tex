@@ -13,14 +13,36 @@
 \hypersetup{pdfborder=0 0 0}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,textcomp}
+\usepackage{tabularx}
+\usepackage{pgfplots}
+\usepackage{xcolor,colortbl}
+\usepackage{multicol}
+\usepackage{pgfplots}
+\usepackage{textpos}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{amssymb}
 \usepackage{fancyhdr}
+\usepackage{enumitem}
 \usepackage{xurl}
 
 
 \def\title{}
 \def\subtitle{}
-\def\author{Havránek Kryštof 4.E}
-\def\institution{Gymnázium, Praha 6, Arabská 14}
+\def\author{Havránek Kryštof}
+\def\institution{ČVUT FEL - EK}
+
+\newcommand {\R}{\mathbb{R}}
+\newcommand {\N}{\mathbb{N}}
+\newcommand {\Q}{\mathbb{Q}}
+\newcommand {\C}{\mathbb{C}}
+\newcommand {\F}{\mathbb{F}}
+\newcommand {\Z}{\mathbb{Z}}
+\newcommand {\lcom}{\left\langle\left\langle}
+\newcommand {\rcom}{\right\rangle\right\rangle}
+
+\newcommand\eqlh{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny L'H}}}{=}}}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
 
 \makeatletter
 \def\@makechapterhead#1{
@@ -64,13 +86,17 @@
 
 
 \begin{document}
+\pagestyle{empty}
+
 \begin{center}
   \vspace{30mm}
   {\huge\title}
   \vspace{8mm}
+
 	{\bf\Large\subtitle}
 	\vfill
   Vypracoval: \hfill \author
+
   Škola: \hfill \institution
   \vspace{10mm}
 \end{center}
