@@ -1,0 +1,15 @@
+%%% Tento soubor obsahuje základní konfiguraci a makra pro poznámky s jednou kapitolou
+
+%%% style pro header a footer pro běžné stránky
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	\fancyhead[L]{\textbf{\title}}
+
+	\fancyfoot[L]{\author}
+	\fancyfoot[C]{}
+	\fancyfoot[R]{\thepage}
+}
+
+

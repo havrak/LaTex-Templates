@@ -1,5 +1,4 @@
 %%% Tento soubor obsahuje definice různých užitečných maker a prostředí %%%
-%%% Další makra připisujte sem, ať nepřekáží v ostatních souborech.     %%%
 
 %%% Drobné úpravy stylu
 
@@ -63,9 +62,6 @@
 }
 
 %%% Prostředí pro sazbu kódu, případně vstupu/výstupu počítačových
-%%% programů. (Vyžaduje balíček fancyvrb -- fancy verbatim.)
-
-\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small, frame=single}
 
 %%% Prostor reálných, resp. přirozených čísel
 \newcommand {\R}{\mathbb{R}}
@@ -75,18 +71,25 @@
 \newcommand {\F}{\mathbb{F}}
 \newcommand {\Z}{\mathbb{Z}}
 
+%%% Zkratka pro komentáře
 \newcommand {\lcom}{\left\langle\left\langle}
 \newcommand {\rcom}{\right\rangle\right\rangle}
 
+%%% Rovná se s indexy pro per partes a l'hospitalovo pravidlo
 \newcommand\eqlh{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny L'H}}}{=}}}
 \newcommand\eqpp{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny PP}}}{=}}}
 
+
 \AtBeginEnvironment{align}{\setcounter{equation}{0}}
 
+%%% deklarace makra pro koordináty
 \newcommand {\coord}{\text{coord}}
 
+%%% Čára pro dvojité podtržení
 \def\doubleunderline#1{\underline{\underline{#1}}}\makeatletter
 
+%%% Prostření tikzcd pro slovanské jazyky s ošetřenou uvozovkou
+\newenvironment{tikzcdi}{\shorthandoff{"}\begin{tikzcd}}{\end{tikzcd}\shorthandon{"}}%
 
 %%% Užitečné operátory pro statistiku a pravděpodobnost
 \DeclareMathOperator{\pr}{\textsf{P}}
