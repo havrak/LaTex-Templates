@@ -1,8 +1,10 @@
 # LaTeX templates
 
-Kolekce různých šablon/souborů maker pro LaTeX. Soubory v kořenovém adresáři se pouze linkují přes include.
-Ve složkách se pak nacházejí kompletní šablony pro složitější dokumenty.
+Kolekce různých šablon a souborů maker pro LaTeX. Soubory v kořenovém adresáři se pouze linkují přes include.
+Ve složce img jsou pak obrázky - logo ČVUT, složka templates obsahuje šablony a finální složka bibliography bibliografii.
+
 Složku s makro soubory lze uvést v globální proměnné TEXINPUTS, nemusí se tak stále kopírovat.
+Osobně mám takto linknuté i složky s bibliografií a obrázky.
 
 
 #### Vzorový dokumentu

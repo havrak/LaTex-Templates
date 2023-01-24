@@ -11,7 +11,6 @@
 %% Vytváříme PDF/A-2u
 \usepackage[a-2u]{pdfx}
 
-%% Přepneme na českou sazbu a fonty Latin Modern
 \usepackage[czech]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -53,37 +52,25 @@
 %%% Údaje o práci
 
 \def\NazevSkoly{}
-% Název oboru včetně počátečního 'Obor'.
 \def\NazevOboru{}
 
-% Název práce v jazyce práce (přesně podle zadání)
 \def\NazevPrace{}
-
 \def\NazevPraceShort{}
-% Název práce v angličtině
-\def\NazevPraceEN{}
 
-% Název práce v němčině
+\def\NazevPraceEN{}
 \def\NazevPraceDE{}
 
-% Jméno autora
 \def\AutorPrace{}
-
-% Rok odevzdání
-\def\RokOdevzdani{}
-% Měsíc odevzdání
-\def\MesicOdevzdani{}
-
-% Vedoucí práce: Jméno a příjmení s~tituly
 \def\Vedouci{}
 
-% Nepovinné poděkování (vedoucímu práce, konzultantovi, tomu, kdo
-% zapůjčil software, literaturu apod.)
+\def\RokOdevzdani{}
+\def\MesicOdevzdani{}
+
+
 \def\Podekovani{%
 \textbf{Poděkování}
 }
 
-% Abstrakt (doporučený rozsah cca 80-200 slov; nejedná se o zadání práce)
 \def\Abstrakt{%
 }
 
@@ -91,7 +78,7 @@
 }
 \def\AbstraktDE{%
 }
-% 3 až 5 klíčových slov (doporučeno), každé uzavřeno ve složených závorkách
+
 \def\KlicovaSlova{%
 }
 \def\KlicovaSlovaEN{%
@@ -99,16 +86,12 @@
 \def\KlicovaSlovaDE{%
 }
 
-%% Balíček hyperref, kterým jdou vyrábět klikací odkazy v PDF,
-%% ale hlavně ho používáme k uložení metadat do PDF (včetně obsahu).
 \hypersetup{unicode}
 \hypersetup{breaklinks=true}
 \hypersetup{pdfborder=0 0 0}
 
-%% Definice různých užitečných maker (viz popis uvnitř souboru)
 \include{makra}
 
-%% Titulní strana a různé povinné informační strany
 \fancypagestyle{plain}{
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
