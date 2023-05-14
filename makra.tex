@@ -36,6 +36,18 @@
 % jich lépe všimli.
 % \overfullrule=1mm
 
+% Definuje prázdnou stranu
+\newcommand\blankpage{
+\newpage
+
+\begin{center}
+\vspace*{\fill}
+  {Prázdná strana}
+\vspace*{\fill}
+\end{center}
+
+}
+
 %%% Makra pro definice, věty, tvrzení, příklady, ... (vyžaduje baliček amsthm)
 \makeatletter
 \def\th@plain{%
@@ -65,8 +77,8 @@
   \par\medskip\noindent
   \textit{Důkaz}.
 }{
-\newline
-\rightline{$\square$}  % nebo \SquareCastShadowBottomRight z balíčku bbding
+
+\rightline{$\square$}
 }
 
 %%% Prostředí pro sazbu kódu, případně vstupu/výstupu počítačových
@@ -78,6 +90,8 @@
 \newcommand {\C}{\mathbb{C}}
 \newcommand {\F}{\mathbb{F}}
 \newcommand {\Z}{\mathbb{Z}}
+\newcommand {\gr}{\text{grad}\,}
+\newcommand {\coord}{\text{coord}}
 
 %%% Zkratka pro komentáře
 \newcommand {\lcom}{\left\langle\left\langle}
@@ -86,13 +100,7 @@
 %%% Rovná se s indexy pro per partes a l'hospitalovo pravidlo
 \newcommand\eqlh{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny L'H}}}{=}}}
 \newcommand\eqpp{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny PP}}}{=}}}
-\newcommand\lieb{\frac{\text{d}y}{\text{d}x}}
 
-
-\AtBeginEnvironment{align}{\setcounter{equation}{0}}
-
-%%% deklarace makra pro koordináty
-\newcommand {\coord}{\text{coord}}
 
 %%% Čára pro dvojité podtržení
 \def\doubleunderline#1{\underline{\underline{#1}}}\makeatletter
