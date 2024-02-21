@@ -82,28 +82,32 @@
 \rightline{$\square$}
 }
 
-%%% Prostředí pro sazbu kódu, případně vstupu/výstupu počítačových
+%%% Vychytávky pro tabulky
+\newcommand{\pulrad}[1]{\raisebox{1.5ex}[0pt]{#1}}
+\newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}
 
 %%% Prostor reálných, resp. přirozených čísel
-\newcommand {\R}{\mathbb{R}}
-\newcommand {\N}{\mathbb{N}}
-\newcommand {\Q}{\mathbb{Q}}
-\newcommand {\C}{\mathbb{C}}
-\newcommand {\F}{\mathbb{F}}
-\newcommand {\Z}{\mathbb{Z}}
-\newcommand {\gr}{\text{grad}\,}
-\newcommand {\coord}{\text{coord}}
-\newcommand {\mdiv}{\mathrm{div}}
-\newcommand {\mrot}{\mathrm{rot}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\C}{\mathbb{C}}
+\DeclareMathOperator{\F}{\mathbb{F}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+
+\DeclareMathOperator{\mgrad}{\text{grad}\,}
+\DeclareMathOperator{\coord}{\text{coord}}
+\DeclareMathOperator{\mdiv}{\mathrm{div}\,}
+\DeclareMathOperator{\mrot}{\mathrm{rot}\,}
 
 %%% Zkratka pro komentáře
-\newcommand {\lcom}{\left\langle\left\langle}
-\newcommand {\rcom}{\right\rangle\right\rangle}
+\newcommand{\lcom}{\left\langle\left\langle} %% decrepated
+\newcommand{\rcom}{\right\rangle\right\rangle} %% decrepated
+\newcommand{\com}[1]{\left\langle\left\langle #1 \right\rangle\right\rangle}
 
-%%% Rovná se s indexy pro per partes a l'hospitalovo pravidlo
-\newcommand\eqlh{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny L'H}}}{=}}}
-\newcommand\eqpp{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny PP}}}{=}}}
-
+%%% Rovná se s indexy
+\DeclareMathOperator{\eqlh}{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny L'H}}}{=}}}
+\DeclareMathOperator{\eqpp}{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny PP}}}{=}}}
+\newcommand{\eqi}[1]{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny #1}}}{=}}}
 
 %%% Čára pro dvojité podtržení
 \def\doubleunderline#1{\underline{\underline{#1}}}\makeatletter
@@ -128,6 +132,3 @@
 \newcommand{\dint}{\int_0^\tau\!\!\int_0^\tau}
 \newcommand{\isqr}[1]{\frac{1}{\sqrt{#1}}}
 
-%%% Vychytávky pro tabulky
-\newcommand{\pulrad}[1]{\raisebox{1.5ex}[0pt]{#1}}
-\newcommand{\mc}[1]{\multicolumn{1}{c}{#1}}

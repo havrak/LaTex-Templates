@@ -1,6 +1,11 @@
 %%% Tento soubor obsahuje základní konfiguraci používanou napříč dokumenty
 
 %%% Lepší užití A5 stránky, standardně latex dost plýtvá
+\addtolength{\topmargin}{-1.6in}
+\setlength\textheight{200mm}
+\setlength\textwidth{138mm}
+\setlength\oddsidemargin{-20mm}
+\setlength\evensidemargin{-20mm}
 
 %%% Běžně používané balíčky
 \usepackage[utf8]{inputenc}
@@ -24,18 +29,13 @@
 \usepackage{enumitem}           % rozšíření způsobů indexování listu
 \usepackage{multicol}           % prostředí pro psaní textu ve sloupcích
 \usepackage{pgfplots}           % grafy
+\usepackage{upgreek} 						% pro sazbu řeckých písmen
 \usepackage{fixmath}            % zpravuje zápis v matematickém módu dle ISO norem
+\usepackage{bbm} 							  % další matematické symboly
+\usepackage{esint} 						  % další integrály
 
 %%% Základní nastavení balíčků
 \def\columnseprulecolor{\color{black}}
 \setlength{\columnseprule}{0.3pt}
 
 \hypersetup{pdfborder=0 0 0}
-
-\addtolength{\topmargin}{-1.6in}
-\setlength\textheight{200mm}
-\setlength\textwidth{138mm}
-\setlength\oddsidemargin{-20mm}
-\setlength\evensidemargin{-20mm}
-
-
