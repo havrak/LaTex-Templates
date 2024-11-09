@@ -1,0 +1,101 @@
+\def\LangCS{cs}
+\def\LangEN{en}
+\def\IncludeExpr{yes}
+
+
+%%% TiKz
+% Memoize package needs to be loaded as soon as possible, in beamer even before document declaration
+\ifx\PackagesIncludeTikz\IncludeExpr
+	\usepackage{memoize}
+	\usepackage{tikz}
+  \usepackage{tikz-cd}
+  \usepackage{circuitikz}
+	\mmzset{memo dir=memoize}
+	\mmzset{auto={circuitikz}{memoize}}
+  \mmzset{auto={tikzcdi}{memoize, verbatim}}
+	\mmzset{auto={tikzpicture}{memoize, verbatim}}
+  % \usepackage{robust-externalize} <- does the job of externalizing figures but leaves a lot of garbage
+
+  \usetikzlibrary{arrows.meta}
+  \usetikzlibrary{calc}
+	\usetikzlibrary{fadings}
+\fi
+
+
+
+\ifx\DocLanguage\LangCS
+  \usepackage[czech]{babel}
+  \babelprovide[transforms = oneletter.nobreak]{czech} % non break on single letter words in czech
+\else
+  \usepackage[english]{babel}
+\fi
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,textcomp}
+
+\usepackage[a-2u]{pdfx}         % adding metadata to pdf with .xmpdata file
+\usepackage{graphicx}						% inserting pictures
+\usepackage{caption}						%	captions of figures
+\usepackage{hyperref} 					% handling of hypertext
+\usepackage{tabularx}           % table environment
+\usepackage{xcolor,colortbl}    % more options for colors
+\usepackage{textpos}            % more precise control over positioning of elements
+\usepackage{longtable}          % longtable environment to enable multipage tables
+\usepackage{fancyhdr}						% custom header and footer
+\usepackage{xurl}								% extension to url handeling, allows linebreaks in urls and more special characters
+\usepackage{enumitem}           % more options for labeling lists
+\usepackage{multicol}           % simplest environment to achieve multiple columns
+
+%%% Math packages
+\usepackage{pgfplots}           % graphs
+\usepackage{amsmath}						% extension for math
+\usepackage{amsthm}							% environment for lemmas, proofs, theorems, etc.
+\usepackage{amssymb} 						% math symbols
+\usepackage{mathrsfs}  	        % math symbols
+\usepackage{mathabx}						% math symbols
+\usepackage{upgreek} 						% non-cursive greek symbols
+\usepackage{mathrsfs} 					% Fancy italic used to denote Hilbert spaces and such
+\usepackage{fixmath}            % makes math comply with ISO 31-0:1992 to ISO 31-13:1992 by adding uppercase non-cursive greek symbols
+\usepackage{bbm} 							  % blackboard variants of computer Modern fonts useful for number groups, mean value notation
+\usepackage{esint} 						  % adds more integrals
+\usepackage{accents} 						% multiple mathematical accents
+\usepackage{arcs} 							% arcs over and under words
+\usepackage{steinmetz} 					% Steinmetz notation for complex numbers
+
+
+
+%%% Basic configuration of packages
+\def\columnseprulecolor{\color{black}}
+\setlength{\columnseprule}{0.3pt}
+
+\hypersetup{pdfborder=0 0 0}
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+
+\pgfplotsset{compat=1.15}
+
+%%% Bibliography
+
+\ifx\PackagesIncludeBib\IncludeExpr
+  \usepackage[backend=biber,style=iso-numeric,sortlocale=cs_CZ]{biblatex}
+
+  \DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}} % force biblatex to make brackets around numbers
+  \ExecuteBibliographyOptions{maxcitenames=2} % In citation with full bibliography entry cite just two names at max, per ISO 690
+  \addbibresource{bibliography.bib}
+
+  \let\familynameformat=\textsc % Use caps-and-small-caps for family names in ISO 690 style.
+
+  % We want to separate multiple authors in citations by commas
+  % (while we use semicolons in the bibliography as per the ISO standard)
+  \DeclareDelimFormat[textcite]{multinamedelim}{\addcomma\space}
+  \DeclareDelimFormat[textcite]{finalnamedelim}{\space and~}
+\fi
+
+
+%%% Minted
+\ifx\PackagesIncludeMinted\IncludeExpr
+  \usepackage{minted}
+  \setminted{mathescape,escapeinside=@@,linenos,numbersep=5pt,frame=lines,breaklines,tabsize=2,framesep=2mm}
+\fi
