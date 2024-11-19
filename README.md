@@ -1,10 +1,8 @@
 # LaTeX templates
 
-Kolekce různých šablon a souborů maker pro LaTeX. Soubory v kořenovém adresáři se pouze linkují přes include.
-Ve složce img jsou pak obrázky - logo ČVUT, složka templates obsahuje šablony a finální složka bibliography bibliografii.
+Collection of basic tex files that I commonly include in my document. `macros.tex` and `packages.tex` define useful macros and package configuration. Rest are used to normalize style acros my documents - `doc_notes.tex` for school notes, `doc_paper` for thesis and so on.
 
-Složku s makro soubory lze uvést v globální proměnné TEXINPUTS, nemusí se tak stále kopírovat.
-Osobně mám takto linknuté i složky s bibliografií a obrázky.
+WARNING: Enabling Tikz in packages turns on Memoize to externalize figure. However if one is using biblatex at the same time this can lead to issues with verbatim type. It is necessary to update `collargs` and `memoize` to latest version in oder to prevent this behavior.
 
 
 ## Poznámky
@@ -92,8 +90,5 @@ end RS;
 Brambory jsou dlouhé i krátké
 
 \end{document}
-
-
-
 ``
 
