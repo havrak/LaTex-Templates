@@ -1,42 +1,42 @@
 \def\LangCS{cs}
 \def\LangEN{en}
-\def\IncludeExpr{yes}
+\def\ConfirmExpr{yes}
 
 
 
 
 %%% TiKz
 % Memoize package needs to be loaded as soon as possible, in beamer even before document declaration
-\ifx\PackagesIncludeTikz\IncludeExpr
+\ifx\PackagesIncludeTikz\ConfirmExpr
 	\usepackage{memoize}
 	\usepackage{collargs}
 	\usepackage{tikz}
-  \usepackage{tikz-cd}
-  \usepackage{circuitikz}
+	\usepackage{tikz-cd}
+	\usepackage{circuitikz}
 	\mmzset{memo dir=memoize}
 	\mmzset{auto={circuitikz}{memoize}}
-  \mmzset{auto={tikzcdi}{memoize, verbatim}}
+	\mmzset{auto={tikzcdi}{memoize, verbatim}}
 	\mmzset{auto={tikzpicture}{memoize, verbatim}}
 
-  \usetikzlibrary{calc}
+	\usetikzlibrary{calc}
 	\usetikzlibrary{fadings}
 	\usetikzlibrary{shapes.geometric, arrows, positioning}
 
-\tikzstyle{layerheader} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, draw=black, fill=gray!30]
-\tikzstyle{startstop} = [ellipse, minimum width=4cm, minimum height=1cm, text centered, draw=black, fill=red!30]
-\tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, draw=black, fill=blue!20]
-\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!20]
-\tikzstyle{arrow} = [thick,->,>=stealth]
+	\tikzstyle{layerheader} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, draw=black, fill=gray!30]
+	\tikzstyle{startstop} = [ellipse, minimum width=4cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+	\tikzstyle{process} = [rectangle, minimum width=4cm, minimum height=1cm, text centered, draw=black, fill=blue!20]
+	\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!20]
+	\tikzstyle{arrow} = [thick,->,>=stealth]
 \fi
 
 
 
 
 \ifx\DocLanguage\LangCS
-  \usepackage[czech]{babel}
-  \babelprovide[transforms = oneletter.nobreak]{czech} % non break on single letter words in czech
+	\usepackage[czech]{babel}
+	\babelprovide[transforms = oneletter.nobreak]{czech} % non break on single letter words in czech
 \else
-  \usepackage[english]{babel}
+	\usepackage[english]{babel}
 \fi
 
 
@@ -87,24 +87,24 @@
 \pgfplotsset{compat=1.15}
 
 %%% Bibliography
-\ifx\PackagesIncludeBib\IncludeExpr
-  \usepackage[backend=biber,style=iso-numeric,sortlocale=cs_CZ, url=true]{biblatex}
+\ifx\PackagesIncludeBib\ConfirmExpr
+	\usepackage[backend=biber,style=iso-numeric,sortlocale=cs_CZ, url=true]{biblatex}
 
-  \DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}} % force biblatex to make brackets around numbers
-  \ExecuteBibliographyOptions{maxcitenames=2} % In citation with full bibliography entry cite just two names at max, per ISO 690
+	\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}} % force biblatex to make brackets around numbers
+	\ExecuteBibliographyOptions{maxcitenames=2} % In citation with full bibliography entry cite just two names at max, per ISO 690
 
-  \let\familynameformat=\textsc % Use caps-and-small-caps for family names in ISO 690 style.
+	\let\familynameformat=\textsc % Use caps-and-small-caps for family names in ISO 690 style.
 
-  % We want to separate multiple authors in citations by commas
-  % (while we use semicolons in the bibliography as per the ISO standard)
-  \DeclareDelimFormat[textcite]{multinamedelim}{\addcomma\space}
-  \DeclareDelimFormat[textcite]{finalnamedelim}{\space and~}
+	% We want to separate multiple authors in citations by commas
+	% (while we use semicolons in the bibliography as per the ISO standard)
+	\DeclareDelimFormat[textcite]{multinamedelim}{\addcomma\space}
+	\DeclareDelimFormat[textcite]{finalnamedelim}{\space and~}
 \fi
 
 
 
 %%% Minted
-\ifx\PackagesIncludeMinted\IncludeExpr
-  \usepackage{minted}
-  \setminted{mathescape,escapeinside=@@,linenos,numbersep=5pt,frame=lines,breaklines,tabsize=2,framesep=2mm}
+\ifx\PackagesIncludeMinted\ConfirmExpr
+	\usepackage{minted}
+	\setminted{mathescape,escapeinside=@@,linenos,numbersep=5pt,frame=lines,breaklines,tabsize=2,framesep=2mm}
 \fi
