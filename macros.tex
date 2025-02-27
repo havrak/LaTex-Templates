@@ -90,12 +90,6 @@
 \newtheorem*{rem}{Remark}
 \newtheorem*{example}{Example}
 
-% \newenvironment{proof}{
-%   \par\medskip\noindent
-%   \textit{Proof}.
-% }{
-% \rightline{$\square$}
-% }
 \else
 \theoremstyle{plain}
 \newtheorem{thm}{Teorém}
@@ -108,12 +102,6 @@
 \newtheorem*{rem}{Připomínka}
 \newtheorem*{example}{Například}
 
-% \newenvironment{proof}{
-%   \par\medskip\noindent
-%   \textit{Důkaz}.
-% }{
-% \rightline{$\square$}
-% }
 \fi
 
 
@@ -170,9 +158,19 @@
 \newcommand{\gotop}{\stackrel{P}{\longrightarrow}}
 \newcommand{\maon}[1]{o(n^{#1})}
 \newcommand{\abs}[1]{\left|{#1}\right|}
-\newcommand{\dint}{\int_0^\tau\!\!\int_0^\tau}
+\ExplSyntaxOn
+\NewDocumentCommand{\intd}{m}
+{
+    \int \clist_map_inline:nn { #1 } { \mathrm{d} ##1 \, }
+}
+\ExplSyntaxOff % expands \intd{x,y} into \int \mathrm{d}x \mathrm{d}y, used primarily in quantum physics
 \newcommand{\isqr}[1]{\frac{1}{\sqrt{#1}}}
 \newcommand{\T}[1]{#1^\top}
+
+%% braket notation
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
 
 %%% Environment with different font size
 \newenvironment{localsize}[1]
